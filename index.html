@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex Vanilla</title>
+    <!-- Ícone da aba do navegador -->
+    <link rel="icon" type="image/png" href="pokedex_icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="title-container">
+            <img src="pokedex_icon.png" alt="Ícone de Pokébola" class="pokeball-icon">
+            <h1>Pokédex</h1>
+        </div>
+        
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Buscar Pokémon pelo nome ou ID...">
+            <button id="searchBtn">Buscar Pokémon</button>
+            <button id="toggleFavoritesBtn">⭐ Mostrar Favoritos</button>
+        </div>
+
+        <div class="advanced-controls">
+            <button id="surpriseBtn" class="btn-surprise">
+                🔄 Surpreenda-me!
+            </button>
+            
+            <div class="sort-container">
+                <label for="sortSelect" class="sort-label">Organizar por</label>
+                <select id="sortSelect" class="sort-select">
+                    <option value="id-asc">Menor número primeiro</option>
+                    <option value="id-desc">Maior número primeiro</option>
+                    <option value="name-asc">A-Z</option>
+                    <option value="name-desc">Z-A</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="statusMessage" class="status-message hidden">Carregando...</div>
+        
+        <div id="pokemonContainer" class="pokemon-grid"></div>
+
+        <div id="pagination" class="pagination">
+            <button id="prevBtn" disabled>⬅️ Anterior</button>
+            <span id="pageInfo">Página 1</span>
+            <button id="nextBtn">Próxima ➡️</button>
+        </div>
+    </main>
+
+    <!-- Modal de Detalhes -->
+    <div id="pokemonModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <button id="modalFavoriteBtn" class="favorite-btn">⭐</button>
+            <div id="modalDetails"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
